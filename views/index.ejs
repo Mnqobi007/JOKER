@@ -41,27 +41,5 @@
             <h1><%-content %></h1>
         </div>
     </div>
-
-   <script>
-        document.getElementById('joke-form').addEventListener('submit', async function(event) {
-            event.preventDefault();
-        
-            const formData = new FormData(this);
-        
-            try {
-                const response = await fetch('/get-joke', {
-                    method: 'POST',
-                    body: formData
-                });
-        
-                const data = await response.json(); // Make sure your backend sends JSON
-        
-                // Show the joke in the response area
-                document.querySelector('.response-area h1').innerText = data.jokeText || data.content || 'No joke found!';
-            } catch (error) {
-                document.querySelector('.response-area h1').innerText = 'Error fetching joke.';
-            }
-        });
-</script>
 </body>
 </html>
