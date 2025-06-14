@@ -35,7 +35,7 @@ app.post("/get-joke",async (req,res) => {
     const result = await axios.get(`${API_URL}/joke/${data.category}?lang=${data.language}&type=${data.type}`);
     const jokeText = result.data.type === "single"? result.data.joke : `${result.data.setup} <br>${result.data.delivery}`;
 
-    res.render("index",{content : jokeText});
+    res.json({content : jokeText});
     } catch(error){
         res.render("index",{content : JSON.stringify(error.response.data.joke)});
     }
