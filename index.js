@@ -18,7 +18,6 @@ const PORT = process.env.PORT || 3000;
 const API_URL = "https://v2.jokeapi.dev"
 
 app.use(bodyParser.urlencoded({extended : true}));
-app.use(express.json()); 
 app.use(express.static('public'));
 
 app.get("/", (req,res) => {
