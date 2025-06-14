@@ -12,7 +12,7 @@
             <h1>JOCKER😂</h1>
             <p>generate a joke.</p>
         </div>
-        <form action="/get-joke" method="post">
+        <form action="/get-joke" method="post" id="joke-form">
             <label for="category">category:</label>
             <select id="category" name="category">
                  <option value="Any">Any</option>
@@ -41,5 +41,11 @@
             <h1><%-content %></h1>
         </div>
     </div>
+<script>
+const form = document.getElementById('joke-form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent page refresh
+});
+</script>
 </body>
 </html>
